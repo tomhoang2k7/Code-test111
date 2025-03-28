@@ -1,3 +1,4 @@
+local ApiHop = loadstring(game:HttpGet('https://raw.githubusercontent.com/HoangNguyenk8/Scripts/refs/heads/main/Test.lua'))()
 local bm = loadstring(game:HttpGet('https://raw.githubusercontent.com/HoangNguyenk8/Cutsomers/refs/heads/main/CuathangTom.lua'))()
 local LIB = bm:Window(
     "Tomhoang hub",
@@ -16,11 +17,12 @@ local statustab = LIB:Tab("Status", "Buom nho", "rbxassetid://119130179654361")
 
 hoppingtab:Line()
 hoppingtab:Button("Hop Dough King", "finding servers have dough king", function()
-    ApiHop:https://donebell.vercel.app/api/Dough()
+    ApiHop:HopDoughKing()
 end)
 hoppingtab:Button("Hop Rip Indra", "finding servers have rip indra", function()
-    ApiHop:https://donebell.vercel.app/api/Rip()
+    ApiHop:HopRipindra()
 end)
 hoppingtab:Button("Hop Mirage", "finding servers have mirage island", function()
-    ApiHop:https://donebell.vercel.app/api/Mirage()
+    ApiHop:HopMirage()
 end)
+```
