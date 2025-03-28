@@ -1,0 +1,27 @@
+local ApiHop = 
+local bm = loadstring(game:HttpGet('https://raw.githubusercontent.com/HoangNguyenk8/Cutsomers/refs/heads/main/CuathangTom.lua'))()
+local LIB = bm:Window(
+    "Tomhoang hub",
+    "Bloxfruit",
+    Enum.KeyCode.RightControl
+)
+Config = {
+    Logo = "rbxassetid://119130179654361",
+    TabColor = Color3.fromRGB(15, 15, 15),
+    StrokeColor = Color3.fromRGB(23, 23, 23),
+    Other = Color3.fromRGB(2, 182, 255),
+    SizeLib = UDim2.new(0, 550, 0, 330)
+}
+local hoppingtab = LIB:Tab("Hopping", "Cac to", "rbxassetid://119130179654361") -- Name/Des/LogoID
+local statustab = LIB:Tab("Status", "Buom nho", "rbxassetid://119130179654361")
+
+hoppingtab:Line()
+hoppingtab:Button("Hop Dough King", "finding servers have dough king", function()
+    ApiHop:https://donebell.vercel.app/api/Dough()
+end)
+hoppingtab:Button("Hop Rip Indra", "finding servers have rip indra", function()
+    ApiHop:https://donebell.vercel.app/api/Rip()
+end)
+hoppingtab:Button("Hop Mirage", "finding servers have mirage island", function()
+    ApiHop:https://donebell.vercel.app/api/Mirage()
+end)
