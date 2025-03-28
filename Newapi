@@ -1,4 +1,3 @@
-local ApiHop = 
 local bm = loadstring(game:HttpGet('https://raw.githubusercontent.com/HoangNguyenk8/Cutsomers/refs/heads/main/CuathangTom.lua'))()
 local LIB = bm:Window(
     "Tomhoang hub",
