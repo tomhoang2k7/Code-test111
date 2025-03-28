@@ -1,0 +1,37 @@
+wait(2.0)
+getgenv().hasUsedRipIndra = false
+
+getgenv().RipIndra = function()
+    if getgenv().hasUsedRipIndra then
+        warn("Đã sử dụng script này trước đó!")
+        return
+    end
+
+    getgenv().hasUsedRipIndra = true
+
+    local url = 'https://donebell.vercel.app/api/Rip'
+    local success, response = pcall(function()
+        return game:GetService('HttpService'):JSONDecode(game:HttpGet(url))
+    end)
+
+    if not success or not response or not response.Boss or not response["Job ID"] then
+        warn("❌ API bị lỗi hoặc không tìm thấy server có Rip Indra!")
+        getgenv().hasUsedRipIndra = false
+        return
+    end
+
+    local jobId = response["Job ID"]  -- Sửa lỗi tên biến
+
+    local teleportSuccess, teleportError = pcall(function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(4442272183, jobId, game.Players.LocalPlayer)
+    end)
+
+    if not teleportSuccess then
+        warn("❌ Lỗi teleport: " .. teleportError)
+        getgenv().hasUsedRipIndra = false
+    end
+end
+
+game:GetService("Players").LocalPlayer.OnTeleport:Connect(function()
+    getgenv().hasUsedRipIndra = false
+end)
